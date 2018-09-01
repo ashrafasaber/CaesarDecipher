@@ -21,13 +21,16 @@ def decrypt_with_key():
 
 # Decrypt
 def decrypt(ci_text, key):
-    ci_text.lower()
+    #ci_text.lower()
     dec_text = ""
-    for char in ci_text:
+    for char in ci_text.lower():
         # ord(char)-97 to get the numerical order of a character in ci_text from 0-26
         # - key to shift, % 26 to put in range from 0-26
         # + 97 to get the numerical order of the character (according to python - not 0-26)
-        dec_text = dec_text+chr( ((ord(char)-97) - key % 26) + 97)
+
+
+
+        dec_text = dec_text+chr((ord(char)-97 - key )% 26 + 97).upper()
     print(dec_text)
 
 # Decrypt without key Function
@@ -35,7 +38,7 @@ def decrypt_without_key():
     ci_text = str(input("Please Input Cipher Text: "))
 
     # for loop
-    for key in range(27):
+    for key in range(2,27):
         print("Key: " + str(key))
         decrypt(ci_text , key)
 
