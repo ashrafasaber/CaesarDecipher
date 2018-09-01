@@ -13,7 +13,6 @@ def choice_options():
         print("Goodbye!")
         quit()
 
-
 # Decrypt with key Function
 def decrypt_with_key():
     ci_text = str(input("Please Input Cipher Text: "))
@@ -39,7 +38,6 @@ def decrypt_without_key():
     for key in range(27):
         print("Key: " + str(key))
         decrypt(ci_text , key)
-
 
 # Main Function
 def main():
